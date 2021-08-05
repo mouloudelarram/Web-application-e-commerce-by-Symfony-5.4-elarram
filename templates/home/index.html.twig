@@ -1,0 +1,58 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Accueil {% endblock %}
+
+{% block body %}
+
+<br/><br/><br/><br/>
+<center><!--
+<h1> Bienvenue . </h1>-->
+<div class="row" style=" margin-left:100px ;">
+    {% for article in articles %}
+        <div class="card col-md-4" style="width: 18rem; margin:20px; background-color: #FAEBD7;">
+        <p class="date"> Ecrit le {{ article.createdAt | date("d/m/y")}} à {{ article.createdAt | date("H:i")}} </p>
+            <img class="card-img-top" src="/assets/blog/images/{{ article.image }}" alt="{{ article.image }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ article.title }}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="{{ path('show', {'id':article.id})}}" class="btn btn-primary">plus</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-primary">Ajouter au panier</button>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<h2  style="font-family: 'Brush Script MT', cursive;">end</h2>
+<div class="w3-container">
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">×</span>
+        <i class="fa fa-shopping-cart" aria-hidden="true" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top"></i>
+      </div>
+      <form class="w3-container" action="#">
+        <div class="w3-section">
+          <label><b>Username</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+          <label><b>Phone</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+          <label><b>Email</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+          <label><b>NB Article</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+          <label><b>Password</b></label>
+          <input class="w3-input w3-border" type="text" placeholder="Enter Password" name="psw" required>
+          <button class="w3-button w3-block w3-green w3-section w3-padding" type="submit">Ajouter</button>
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+        <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+      </div>
+
+    </div>
+  </div>
+</div>
+            
+</body>
+{% endblock %} 
+

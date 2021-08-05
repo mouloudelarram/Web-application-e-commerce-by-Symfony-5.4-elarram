@@ -1,0 +1,7 @@
+test:
+    path: /test
+    controller: App\Controller\testController::test
+
+home:
+    path: /home
+    controller: App\Controller\HomeControllerPhpController::index

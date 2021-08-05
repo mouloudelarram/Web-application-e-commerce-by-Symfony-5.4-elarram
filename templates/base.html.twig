@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="/assets/css/style.css" />
+        {% endblock %}
+    {% endblock %}
+    <body>
+        <header>
+        <center><!--
+            <a href="home">
+                <h1 style="font-family: 'Brush Script MT', cursive; margin-top: 50px;">
+                    <u> easy shop </u>
+                </h1>
+            </a>-->
+        </center>
+            <div class="parent2">
+                <a href="about">
+                <div class="test1"><i class="fa fa-question fa-2x"></i></div>
+                </a>
+                <a href="https://www.instagram.com/z.souucreations/" target="_blank">
+                <div class="test2"><i class="fa fa-instagram fa-2x"></i></div>
+                </a>
+                <a href="home">
+                <div class="test3"><i class="fa fa-shopping-cart fa-2x"></i></div>
+                </a>
+                <a href="admin" target="_blank">
+                <div class="test4"><i class="fa fa-user fa-2x"></i></div>
+                </a>
+                <div class="mask2"><i class="fa fa-home fa-3x"></i></div>
+            </div>
+            <!-- search file -->
+            <div class="search-box">
+                <button class="btn-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <input type="text" class="input-search" placeholder="Type to Search...">
+            </div>
+        </header>
+        <!-- style body / color -->
+        <div class="container">
+            {% block body %}
+            {% endblock %}
+        </div>
+        {% block javascripts %}
+            <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+            <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="/assets/js/script.js"></script>
+            <script defer src="https://use.fontawesome.com/release/v5.0.6/js/all.js"></script>
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </body>
+</html>
+
+
+
